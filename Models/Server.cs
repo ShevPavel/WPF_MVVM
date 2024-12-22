@@ -23,13 +23,29 @@ namespace WPF_MVVM.Models
 
         Random _random = new Random();
 
-        //=========================================================== Methods ====================================================
+        //=========================================================== Methods ===================================================
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Trade 
+            Trade trade = new Trade();
 
-            Count = _random.Next(0, 100);
+            trade.Vollume = _random.Next(-10, -10);
+            trade.Price = _random.Next(50000, 60000);
+            trade.DateTime = DateTime.Now;
+
+            EventTradeDelegat?.Invoke(trade);  // Если наше событие не равно null, т.е. на это событие кто-то подписался, то отправляем ему trade
+            /*  
+            if (EventTradeDelegat != null)   // Полная запись строчки выше
+            {
+                EventTradeDelegat(trade);
+            }
+            */
         }
+
+        //===========================================================+ Event ===================================================
+
+        public delegate void tradeDelegat(Trade trade);  // Создаем делегат
+        public event tradeDelegat EventTradeDelegat;  // Создаем событие
+
     }
 }
