@@ -80,7 +80,7 @@ namespace WPF_MVVM.ViewModels
             Volume = trade.Volume;
             Price = trade.Price;
             DateTimeTrade = trade.DateTime;
-            Summ += trade.Volume;
+            Summ += Volume;
         }
 
     }
