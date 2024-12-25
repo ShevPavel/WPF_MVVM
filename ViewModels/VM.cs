@@ -15,27 +15,24 @@ namespace WPF_MVVM.ViewModels
     {
         public VM()
         {
-            _server = new Server();
-            _server.EventTradeDelegat += _server_EventTradeDelegat;
+            _server = new Server();   // Внутри ViewModel создаем объект Model (в нашем случае server - коннектор к бирже)
+            _server.EventTradeDelegat += _server_EventTradeDelegat;  // Подписываемся на события внутри модели (Model)
         }
-
-
 
         //========================================================== Fields ======================================================
 
         Server _server;
 
-
         //========================================================== Properties ==================================================
 
-        public decimal Volume
+        public decimal Volume  // привязки работают только со свойствами
         {
             get => _volume;
 
             set 
             {
                 _volume = value;
-                OnPropertyChanged(nameof(Volume));  // когда значение Number меняется, мы вызываем метод OnPropertyChanged и передаем ему значение Number
+                OnPropertyChanged(nameof(Volume));  // когда значение Volume меняется, мы вызываем метод OnPropertyChanged и передаем ему значение Volume
             }                                       // nameof добавлено чтобы работало массовое переименование
         }
         decimal _volume;
@@ -47,7 +44,7 @@ namespace WPF_MVVM.ViewModels
             set
             {
                 _price = value;
-                OnPropertyChanged(nameof(Price)); 
+                OnPropertyChanged(nameof(Price));  // Метод который извещает об изменении свойства
             }                                       
         }
         decimal _price;
@@ -59,7 +56,7 @@ namespace WPF_MVVM.ViewModels
             set
             {
                 _dateTimeTrade = value;
-                OnPropertyChanged(nameof(DateTimeTrade));
+                OnPropertyChanged(nameof(DateTimeTrade));   // Метод который извещает об изменении свойства
             }
         }
         DateTime _dateTimeTrade;

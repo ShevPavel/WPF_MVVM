@@ -25,9 +25,9 @@ namespace WPF_MVVM
         {
             InitializeComponent();
 
-            DataContext = vm;
+            DataContext = vm;   // Присваиваем созданную модель свойству DataContext
         }
-        VM vm = new VM();
+        VM vm = new VM();   // Создаем объект ViewModel
 
     }
 }

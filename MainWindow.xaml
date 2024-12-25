@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_MVVM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1200">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Height" Value="60"/>
-            <Setter Property="Width" Value="550"/>
+            
             <Setter Property="Foreground" Value="Red"/>
             <Setter Property="FontSize" Value="50"/>
             <Setter Property="Margin" Value="0,5"/>
@@ -19,7 +19,7 @@
     <StackPanel Orientation="Vertical">
         <TextBlock Text="{Binding Volume}" />
         <TextBlock Text="{Binding Price}" />
-        <TextBlock Text="{Binding DateTimeTrade}" />
+        <TextBlock Text="{Binding DateTimeTrade, StringFormat={}{0:s}}" />
 
     </StackPanel>
 </Window>

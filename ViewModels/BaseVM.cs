@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WPF_MVVM.ViewModels
 {
-    public class BaseVM : INotifyPropertyChanged
+    public class BaseVM : INotifyPropertyChanged    // наследуем магию привязок из INotifyPropertyChanged
     {
 
         public void OnPropertyChanged(string prop)  // Метод создания привязки с XAML (принимает строку)
