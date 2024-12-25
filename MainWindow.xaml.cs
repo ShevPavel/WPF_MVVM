@@ -25,8 +25,6 @@ namespace WPF_MVVM
         {
             InitializeComponent();
 
-            
-
             DataContext = vm;
         }
         VM vm = new VM();

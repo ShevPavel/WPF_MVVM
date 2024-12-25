@@ -8,16 +8,16 @@ namespace WPF_MVVM.Entity
 {
     public class Trade
     {
-        public decimal Vollume
+        public decimal Volume
         {
             get => _vollume;
             set
             {
                 _vollume = value;
 
-                if (Vollume > 10) Side = Side.Long;
+                if (Volume > 10) Side = Side.Long;
 
-                else if (Vollume < 10) Side = Side.Short;
+                else if (Volume < 10) Side = Side.Short;
             }
 
         }
@@ -28,5 +28,7 @@ namespace WPF_MVVM.Entity
         public Side Side = Side.None;
 
         public DateTime DateTime = DateTime.MinValue;
+
+        public string SecName;
     }
 }
