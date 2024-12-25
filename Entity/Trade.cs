@@ -30,5 +30,7 @@ namespace WPF_MVVM.Entity
         public DateTime DateTime = DateTime.MinValue;
 
         public string SecName;
+
+        public decimal Summ;
     }
 }

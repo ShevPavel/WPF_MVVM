@@ -17,6 +17,7 @@
         </Style>
     </Window.Resources>
     <StackPanel Orientation="Vertical">
+        <TextBlock Text="{Binding Summ}" />
         <TextBlock Text="{Binding Volume}" />
         <TextBlock Text="{Binding Price}" />
         <TextBlock Text="{Binding DateTimeTrade, StringFormat={}{0:s}}" />

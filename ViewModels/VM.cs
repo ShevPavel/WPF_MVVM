@@ -37,6 +37,18 @@ namespace WPF_MVVM.ViewModels
         }
         decimal _volume;
 
+        public decimal Summ
+        {
+            get => _summ;
+
+            set
+            {
+                _summ = value;
+                OnPropertyChanged(nameof(Summ));  // Метод который извещает об изменении свойства
+            }
+        }
+        decimal _summ;
+
         public decimal Price
         {
             get => _price;
@@ -68,6 +80,7 @@ namespace WPF_MVVM.ViewModels
             Volume = trade.Volume;
             Price = trade.Price;
             DateTimeTrade = trade.DateTime;
+            Summ += trade.Volume;
         }
 
     }
