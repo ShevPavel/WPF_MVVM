@@ -15,9 +15,9 @@ namespace WPF_MVVM.Entity
             {
                 _vollume = value;
 
-                if (Volume > 10) Side = Side.Long;
+                if (Volume > 0) Side = Side.Long;
 
-                else if (Volume < 10) Side = Side.Short;
+                else if (Volume < 0) Side = Side.Short;
             }
 
         }

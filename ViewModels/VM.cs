@@ -73,6 +73,18 @@ namespace WPF_MVVM.ViewModels
         }
         DateTime _dateTimeTrade;
 
+        public Side Side
+        {
+            get => _side;
+
+            set
+            {
+                _side = value;
+                OnPropertyChanged(nameof(Side));   // Метод который извещает об изменении свойства
+            }
+        }
+        Side _side;
+
         //=========================================================== Methods ====================================================
 
         private void _server_EventTradeDelegat(Trade trade)  // метод вызывается после срабатывания таймера (Timer_Elapsed)
@@ -81,6 +93,8 @@ namespace WPF_MVVM.ViewModels
             Price = trade.Price;
             DateTimeTrade = trade.DateTime;
             Summ += Volume;
+            Side = trade.Side;
+           
         }
 
     }
