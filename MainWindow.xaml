@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_MVVM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1200">
+        Title="MainWindow" Height="580" Width="1000">
     
     <Window.Resources>
         <Style TargetType="TextBlock">
